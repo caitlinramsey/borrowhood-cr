@@ -2,13 +2,15 @@
   --primary:#f5f2f2;
   --secondary: #43a6bf;
   --secondary-light: #4dc0de;
-  --highlights: #77b664; 
-  --highlights-light: #e6ede7;
+  --highlights: #3cff00; 
   --text: black;
   --light-gray: #DDDDDD;
-  --unavailable: #e74c3c;
-  --stars: #e67e22;
-  --pending: #f1c40f;
+  --unavailable: #ff1900;
+  --stars: #ffe600;
+  --pending: #ffb300;
+  --input-background: white;
+  --profile-titles: rgb(58, 51, 51);
+  --login-text: rgb(77, 73, 73);
 }
 
 * {
@@ -30,17 +32,13 @@ body {
 }
 
 /* Global Styling */
-.red,
-.red::before {
-  color: var(--unavailable);
-}
-
 .display-inline {
   display: inline-block;
 }
 
 .stars {
   color: var(--stars);
+  font-size: 2.5rem;
 }
 
 .trigger-modal {
@@ -49,54 +47,44 @@ body {
 
 .card {
   position: relative;
-  background-color: var(--highlights-light);
+  background-color: var(--secondary-light);
+  box-shadow: 10px 10px 18px 4px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 10px 10px 18px 4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 18px 4px rgba(0,0,0,0.75);
 }
 
-/* Status dots */
+/* Homepage Styling */
 
-.status-container {
-  background-color: rgba(0,0,0,.025);
+/* .h-screen {
+  background-image: url(../images/neighborhood.jpg);
+  min-width: 100vw;
+  background-repeat: no-repeat;
+} */
+
+/* Chat Styling */
+
+.chat {
+  padding: 5rem;
 }
 
-.status-dot {
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  display: inline-block;
-  margin-right: 5px;
-  position: absolute;
-  top: 10px;
-  right: 5px;
+.chat-bubble {
+  background-color: var(--login-text);
+  color: var(--primary);
+  font-size: 1.5rem;
 }
 
-.available {
-  background-color: var(--highlights);
+.second-chat {
+  background-color: var(--secondary);
 }
 
-.pending {
-  background-color: var(--pending);
+.chat-start {
+  margin-top: 20rem;
+  margin-bottom: -7rem;
 }
 
-.not-available {
-  background-color: var(--unavailable);
-}
-
-.status-keys {
-  position: relative;
-  text-align: center;
-  padding: .5rem;
-}
-
-.status-keys li {
-  display: inline-block;
-  margin-right: 10px;
-  margin-left: 10px;
-  color: var(--text);
-  font-size: .9em;
-}
-
-.status-keys .status-dot {
-  position: inherit;
+.home-welcome {
+  margin-top: 20rem;
+  font-size: 1.8rem;
 }
 
 /*  Navbar Styling  */
@@ -104,6 +92,7 @@ body {
   padding: 25px;
   background-color: var(--primary);
 }
+
 .navbar-btn {
   margin-left: 2.5rem;
   padding: 5px;
@@ -111,11 +100,22 @@ body {
   border: none;
   cursor: pointer;
 }
+
 .navbar-end a#logout {
   color: var(--text);
 }
+
 .burger :hover {
   background-color: none !important;
+}
+
+.menu {
+  background-color: var(--secondary);
+}
+
+.menu li a {
+  font-size: 1.2rem;
+  padding: .5rem;
 }
 
 .logo {
@@ -131,8 +131,34 @@ body {
 .bg-orange-400 {
   tw-bg-opacity: 1;
   background-color: rgb(251 146 60 / var(--tw-bg-opacity));
-  
-  }
+}
+
+.logout-icon {
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.nav-login {
+  background-color: var(--secondary-light);
+  color: var(--input-background);
+  padding: .8rem;
+  border-radius: .5rem;
+}
+
+.nav-register {
+  background-color: var(--secondary-light);
+  color: var(--input-background);
+  padding: .8rem;
+  border-radius: .5rem;
+  min-width: 5rem;
+}
+
+/* Log In Page */
+
+.label-text {
+  color: var(--login-text);
+}
+
 /* Request container */
 
 .request-container span {
@@ -140,40 +166,17 @@ body {
   display: block;
 }
 
-.borrowed-by {
+/* .request-container span:last-of-type {
   margin-bottom: 0;
-}
+} */
 
 .borrowed-by,
 .borrowed-from {
   margin-top: 30px;
   padding-top: 15px;
 }
-
-.borrowed-from span {
-  margin-right: 5px;
-}
-
 .border-top {
   border-top: 2px solid var(--text);
-}
-
-/* Chat Styling */
-
-.home {
-  margin-top: 5.5rem;
-}
-.chat {
-  padding: 80px;
-}
-
-.chat-bubble {
-  background-color: var(--highlights);
-  color: var(--primary);
-}
-
-.chat-start {
-  margin-bottom: -80px;
 }
 
 /* Form Styling */
@@ -187,24 +190,13 @@ button .forms {
   background-color: none !important ;
 }
 
-.return-button {
-  display: inline-block;
+.borrow-button {
+  padding: .8rem;
+  border-radius: .5rem;
 }
 
-.login-btn,
-.borrow-button,
-.add-item-button-div button.add-item-btn,
-.add-review-button,
-.return-button {
-  border-color: var(--secondary);
-  color: var(--black)
-}
-.login-btn:hover,
-.borrow-button:hover,
-.add-item-button-div button.add-item-btn:hover,
-.add-review-button:hover,
-.return-button:hover {
-  color: var(--primary) !important;
+.login-btn, .borrow-button, .add-item-btn, .add-review-button {
+  background-color: var(--secondary);
 }
 
 .input-group  > :last-child{
@@ -226,20 +218,19 @@ button .forms {
 /* Dashboard Styling */
 
 .welcome-text {
-  font-size: x-large;
+  font-size: 3rem;
   color: var(--text);
 }
 
 .dashboard-top {
   margin: auto;
   margin-top: 3.5rem;
-  width: 40%;
 }
 
-.post {
-  padding-left: 1rem;
-  font-size: larger;
-  color: var(--text);
+.your-items, .borrowed-items {
+  font-size: 2rem;
+  text-decoration: underline;
+  padding-bottom: 1rem;
 }
 
 .none {
@@ -252,26 +243,17 @@ button .forms {
   margin-bottom: 40px;
 }
 
-#dashboard section * {
-  color: var(--text);
-}
-
 #dashboard section h2 {
   margin-top: 20px;
-}
-
-#dashboard section h3 {
-  margin-top: 0;
-  margin-right: 20px;
 }
 
 #dashboard section p {
   margin-top: 0;
 }
 
-#dashboard section p:last-of-type {
+/* #dashboard section p:last-of-type {
   margin-bottom: 0;
-}
+} */
 
 #dashboard section .dash-card-text {
   font-weight: bold;
@@ -283,13 +265,62 @@ button .forms {
   background-color: var(--light-gray);
 }
 
+/* Dashboard Add Item Modal */
+
+#item_name, #item_description, #item_condition {
+  font-size: 1.3rem;
+  color: var(--text);
+}
+
+.add-item-btn {
+  color: var(--input-background);
+}
+
+/* Dashboard Your Items */
+
+.item-name {
+ font-size: 1.4rem; 
+ margin-bottom: 1rem;
+}
+
+.item-description {
+  margin-bottom: 1rem;
+}
+
+.item-no-requests {
+
+}
+
+.dropdown-ellipsis {
+  font-size: 1.5rem;
+  padding-right: 1rem;
+}
+
+/* Dashboard Items You Borrowed */
+
+.borrowed-from {
+  font-size: 1.3rem;
+}
+
+.return-button {
+  background-color: var(--login-text);
+  color: var(--input-background);
+  padding: 1rem;
+  width: 30%;
+  margin-top: 1rem;
+}
+
 /* Collapse Review Styling */
 
 .collapse {
-background-color: rgba(119, 182, 100, 0.25);
+background-color: var(--login-text);
 color: var(--text);
 margin-top: 1.5rem;
+}
 
+.collapse-title {
+  color: var(--input-background);
+  background-color: var(--profile-titles);
 }
 
 .review-form {
@@ -301,7 +332,6 @@ margin-top: 1.5rem;
   color: var(--text);
 }
 
-
 .rating {
   width: 180px;
 }
@@ -309,6 +339,14 @@ margin-top: 1.5rem;
 .rating__star {
   cursor: pointer;
   color: var(--stars);
+}
+
+.add-review-txtarea {
+  font-size: 1.5rem;
+}
+
+.add-review-button  {
+  color: var(--input-background);
 }
 
 /* Feed Styling */
@@ -365,9 +403,6 @@ margin-top: 1.5rem;
   cursor: pointer;
 }
 
-
-/* Feed Styling */
-
 .modal-title {
   font-weight: bold;
   font-size: 2rem;
@@ -415,14 +450,6 @@ margin-top: 1.5rem;
 
 .feed-card ul.dropdown-content li:last-child {
   padding-bottom: 15px;
-}
-
-.navbar ul.dropdown-content {
-  background-color: white;
-}
-
-.navbar ul.dropdown-content li a:hover {
-  color: var(--text)
 }
 
 .indicator {
@@ -476,12 +503,59 @@ margin-top: 1.5rem;
   color: var(--text);
 }
 
-/* .not-rated {
+.not-rated {
   font-size: 1.2rem;
   padding-top: 1rem;
   padding-right: 1rem;
   padding-bottom: 1rem;
-} */
+}
+
+/* Status dots */
+
+.status-container {
+  background-color: rgba(0,0,0,.025);
+}
+
+.status-dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+  position: absolute;
+  top: 10px;
+  right: 5px;
+}
+
+.available {
+  background-color: var(--highlights);
+}
+
+.pending {
+  background-color: var(--pending);
+}
+
+.not-available {
+  background-color: var(--unavailable);
+}
+
+.status-keys {
+  position: relative;
+  text-align: center;
+  padding: .5rem;
+}
+
+.status-keys li {
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 10px;
+  color: var(--text);
+  font-size: .9em;
+}
+
+.status-keys .status-dot {
+  position: inherit;
+}
 
 /* About Us */
 
@@ -527,28 +601,36 @@ margin-top: 1.5rem;
 
 /* Profile Styling */
 
-#profile * {
+.profile-header {
   color: var(--text);
+  font-size: 3.5rem;
 }
 
-#profile h3 {
-  margin-top: 0;
+.current-info, .edit-profile, .reset-password-text {
+  font-size: 1.5rem;
+  text-decoration: underline;
+  background-color: var(--profile-titles);
+  color: var(--input-background);
+  padding: 1rem;
+  border-radius: .5rem;
 }
 
-#profile h3.border-top {
-  padding-top: 20px;
+.first-name, .last-name, .email-profile, .change-first-name, .change-last-name, .change-email, .current-password, .new-password, .confirm-new-password {
+  font-size: 1.2rem;
 }
 
-#profile p {
-  margin: 0;
+#profile-firstName, #profile-lastName, #profile-email, #currentPassword, #newPassword, #confirmPassword {
+  background-color: var(--input-background);
+  margin-top: 1rem;
+  border-style: solid;
+  border-color: var(--text);
 }
 
-#profile p:last-of-type {
-  margin-bottom: 20px;
-}
-
-#profile input {
-  background-color: white;
+.save-changes, .reset-password {
+  background-color: var(--secondary-light);
+  color: var(--input-background);
+  padding: .8rem;
+  border-radius: .5rem;
 }
 
 /* Footer Styling */
