@@ -5,22 +5,35 @@
 ## Description
 Borrowhood is an application which allows people to borrow needed items from their neighbors. It also allows neighbors to lend and borrow tools, equipment, and household items with or from one another. It encourages community interaction and sharing of resources which, in turn, minimizes individual purchases and decreases landfill waste. It's easy and fast to sign up and start listing items available for lending or searching for what you need!
 
-## API Documentation
-We wrote some API documentation for you. You can read it right [here](API.md)
-
 ## Table of Contents
 - [Mockup](#mockup)
-- [Installation](#installation)
+- [Technologies Used](#technologies-used)
 - [Usage](#usage)
 - [License](#license)
 - [GitHub](#github)
 - [Deployed Application](#deployed)
+- [Contact](#contact)
 
 ## Mockup
-![An image of the Borrowhood application dashboard.](./public/images/borrowhood-mockup.png)
+![An image of the Borrowhood application dashboard.](./public/images/borrowhood.jpg)
 
-## Installation
-N/A
+## Technologies Used
+
+To easily install packages, run the following command in your terminal:
+
+> `npm i` <br>
+
+**Below are the indiviudal packages required to run this application**
+|Packages Required | Installation |
+|---------------------------------------------------------|-------------------|
+|[Vite](https://vitejs.dev/guide/) (4.4.5) | `npm i vite`
+
+
+**Additional Technologies**
+
+- [Heroku](https://www.heroku.com/): Cloud platform that enables us to deploy our web application.
+- [MongoDB](https://www.mongodb.com/docs/manual/installation/): Primary NoSQL database system to manage our data.
+- [Node](https://nodejs.org/en): JavaScript everywhere! Used to simplify development on both the front-end and back-end.
 
 ## Usage
 Borrowhood makes it easy to find tools and equipment that you need to borrow in your own neighborhood. Look up specific tools, check out ratings, see buyer profiles and more.
@@ -29,7 +42,7 @@ Borrowhood makes it easy to find tools and equipment that you need to borrow in 
 MIT
 
 ## GitHub
-GitHub Repository: https://github.com/skywalkah/borrowhood/tree/main
+GitHub Repository: https://github.com/caitlinramsey/Borrowhood
 
 ## Credits
 Developers: [Arianne Pandini](https://github.com/aripandini), [Caitlin Ramsey](https://github.com/caitlinramsey), [Joshua Wongg](https://github.com/joshuawongg), and [Lucas Schvindt](https://github.com/skywalkah)
@@ -37,4 +50,8 @@ Developers: [Arianne Pandini](https://github.com/aripandini), [Caitlin Ramsey](h
 Framework: [Tailwind CSS - Daisy UI](https://daisyui.com/docs/install/)
 
 ## Deployed Application
-Application: https://polar-beach-65067-18b2f94f915d.herokuapp.com/
+Original Application: https://polar-beach-65067-18b2f94f915d.herokuapp.com/
+Updated Application: 
+
+## Contact
+- **Caitlin:** [GitHub](https://github.com/caitlinramsey) | [LinkedIn](https://www.linkedin.com/in/caitlin-ramsey/) | [Email](caitlinramsey@outlook.com)

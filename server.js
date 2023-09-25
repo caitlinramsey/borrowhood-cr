@@ -8,7 +8,7 @@ const { SafeString } = require('handlebars');
 const sequelize = require('./db/config');
 const routes = require('./routes');
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 
 const app = express();
 const hbs = exphbs.create({
