@@ -23,17 +23,21 @@ To easily install packages, run the following command in your terminal:
 
 > `npm i` <br>
 
-**Below are the indiviudal packages required to run this application**
+**Below are the individual packages required to run this application**
 |Packages Required | Installation |
 |---------------------------------------------------------|-------------------|
-|[Vite](https://vitejs.dev/guide/) (4.4.5) | `npm i vite`
+|[Express](https://expressjs.com/) (4.18.1) | `npm install express`
+|[Sequelize](https://sequelize.org/) (4.1) | `npm install sequelize sqlite3`
+|[DaisyUI](https://daisyui.com/) (3.7.7) | `npm i -D daisyui`
+|[Tailwind CSS](https://tailwindcss.com/) (3.3.3) | `npm install -D tailwindcss`
 
 
 **Additional Technologies**
 
 - [Heroku](https://www.heroku.com/): Cloud platform that enables us to deploy our web application.
-- [MongoDB](https://www.mongodb.com/docs/manual/installation/): Primary NoSQL database system to manage our data.
 - [Node](https://nodejs.org/en): JavaScript everywhere! Used to simplify development on both the front-end and back-end.
+- [Handlebars](https://handlebarsjs.com/guide/#what-is-handlebars): A simple templating language.
+- [MySQL](https://www.mysql.com/): The database used for this project.
 
 ## Usage
 Borrowhood makes it easy to find tools and equipment that you need to borrow in your own neighborhood. Look up specific tools, check out ratings, see buyer profiles and more.
@@ -42,7 +46,7 @@ Borrowhood makes it easy to find tools and equipment that you need to borrow in 
 MIT
 
 ## GitHub
-GitHub Repository: https://github.com/caitlinramsey/Borrowhood
+GitHub Repository: https://github.com/caitlinramsey/borrowhood-cr
 
 ## Credits
 Developers: [Arianne Pandini](https://github.com/aripandini), [Caitlin Ramsey](https://github.com/caitlinramsey), [Joshua Wongg](https://github.com/joshuawongg), and [Lucas Schvindt](https://github.com/skywalkah)
@@ -51,7 +55,8 @@ Framework: [Tailwind CSS - Daisy UI](https://daisyui.com/docs/install/)
 
 ## Deployed Application
 Original Application: https://polar-beach-65067-18b2f94f915d.herokuapp.com/
+</br>
 Updated Application: 
 
 ## Contact
-- **Caitlin:** [GitHub](https://github.com/caitlinramsey) | [LinkedIn](https://www.linkedin.com/in/caitlin-ramsey/) | [Email](caitlinramsey@outlook.com)
+- [GitHub](https://github.com/caitlinramsey) | [LinkedIn](https://www.linkedin.com/in/caitlin-ramsey/) | [Email](caitlinramsey@outlook.com)
