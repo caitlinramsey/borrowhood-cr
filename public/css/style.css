@@ -23,7 +23,6 @@ body {
   background-color: var(--primary);
   min-height: 100vh;
   color:var(--text);
-
 }
 
 .logo-sm {
@@ -157,6 +156,16 @@ body {
 
 .label-text {
   color: var(--login-text);
+}
+
+.login-page-button {
+  color: var(--primary);
+}
+
+/* Register Page */
+
+.register-button {
+  color: var(--primary);
 }
 
 /* Request container */
@@ -637,8 +646,14 @@ margin-top: 1.5rem;
 
 footer {
   background-color: var(--secondary);
+  height: 250px;
 }
 
-footer .text {
-  color: var(--text); 
+.about-us-footer {
+  font-size: 2rem;
+}
+
+.copyright {
+  font-size: 1.4rem;
+  color: var(--text);
 }

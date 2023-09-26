@@ -1,7 +1,7 @@
 <section class=' container dashboard-top'>
   <div class='flex flex-col w-full border-opacity-50'>
     <div class='grid rounded-box place-items-center'>
-      <h1 class='welcome-text text-center mt-5'>{{welcomeMessage}}</h1>
+      <h1 class='welcome-text text-center mt-5'><strong>{{welcomeMessage}}</strong></h1>
     </div>
   </div>
 </section>
@@ -37,7 +37,7 @@
       </dialog>
   </div>
     {{#if ownedItems.length}}
-      <div class='grid grid-flow-row my-8 gap-8 text-neutral-600 sm:grid-cols-1 md:grid-cols-2'>
+      <div class='grid grid-flow-row my-8 gap-8 sm:grid-cols-1 md:grid-cols-2'>
         {{#each ownedItems as |ownedItem|}}
           <div class='rounded-xl p-6 shadow-lg shadow-gray-200 bg-white duration-300 hover:-translate-y-1 feed-card' id='item-{{ownedItem.id}}'>
             {{#each ownedItem.requests}}
@@ -46,65 +46,38 @@
                 <div class="hint"></div>
               {{/ifEqual}}
             {{/each}}
-            {{#if this.return}}
-              {{#ifEqual this.return.return_status 'pending'}}
-                <div class="indicator"></div>
-                <div class="hint"></div>
-              {{/ifEqual}}
-            {{/if}}
-            <div class="dropdown dropdown-end">
-              <label tabindex="0" class="btn m-1"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></label>
-              <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                <li><a><i class='delete-button fa fa-trash'></i> Delete item</a></li>
-                {{#each this.requests}}
+            <div class='dropdown dropdown-end'>
+              <label tabindex='0' class='dropdown-ellipsis m-1'><i class='fa fa-ellipsis-v' aria-hidden='true'></i></label>
+              <ul tabindex='0' class='dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52'>
+                <li><a class='delete-button'><i class='delete-button fa fa-trash'></i> Delete item</a></li>
+                {{#each ownedItem.requests}}
                   {{#ifEqual request_status 'pending'}}
-                    <li>
-                      <button class='approve-button display-inline' data-item-id='{{item_id}}' data-request-id='{{id}}' data-user-id='{{this.user_id}}'>
+                      <li><button class='approve-button display-inline' data-item-id='{{item_id}}' data-request-id='{{id}}' data-user-id='{{this.user_id}}' data-request-type='{{ownedItem.is_available}}'>
                         <i class="fa fa-check" aria-hidden="true"></i> Approve
-                      </button>
-                    </li>
-                    <li>
-                      <button class='deny-button display-inline' data-item-id='{{item_id}}' data-request-id='{{id}}' data-user-id='{{this.user_id}}'>
+                      </button></li>
+                      <li><button class='deny-button display-inline' data-item-id='{{item_id}}' data-request-id='{{id}}' data-user-id='{{this.user_id}}' data-request-type='{{ownedItem.is_available}}'>
                         <i class="fa fa-ban" aria-hidden="true"></i> Deny
-                      </button>
-                    </li>
+                      </button></li>
                   {{/ifEqual}}
                 {{/each}}
-                {{#if this.return}}
-                  {{#ifEqual this.return.return_status 'pending'}}
-                    <li>
-                      <button class='confirm-return-btn display-inline' data-item-id='{{this.return.item_id}}' data-request-id='{{this.return.id}}' data-user-id='{{this.return.user_id}}'>
-                        <i class="fa fa-check" aria-hidden="true"></i> Confirm Return
-                      </button>
-                    </li>
-                  {{/ifEqual}}
-                {{/if}}
               </ul>
             </div>
-            <h3 class='mt-0'>{{ownedItem.item_name}}</h3>
-            <p>{{ownedItem.item_description}}</p>
+            <h3 class='item-name text-center'><strong>{{ownedItem.item_name}}</strong></h3>
+            <p class="item-description text-center">{{ownedItem.item_description}}</p>
             {{#if ownedItem.requests.length}}
             <div class='request-container mt-5 border-top'>
               {{#each ownedItem.requests}}
                 {{#ifEqual request_status 'pending'}}
                   <span class='rounded-lg borrow-alert-tag'>
-                    You have a request
+                    {{this.user.firstName}} sent you a borrow request for this item.
                   </span>
-                {{else ifEqual ../return.return_status 'pending'}}
-                  <p class='dash-card-text border-top border-top pt-5'>
-                    {{this.user.firstName}} sent a return request.
-                  </p>
                 {{else}}
-                  {{#if this.is_available}}
-                    <p class='dash-card-text border-top border-top pt-5'>No requests for this item.</p>
-                  {{else}}
-                    <p class='borrowed-by dash-card-text pt-5'>Borrowed by {{this.user.firstName}}</p>
-                  {{/if}}
+                  <p class='borrowed-by dash-card-text pt-5'>Borrowed by {{this.user.firstName}}</p>
                 {{/ifEqual}}
               {{/each}}
             </div>
             {{else}}
-              <p class='dash-card-text border-top border-top pt-5'>No requests for this item.</p>
+              <p class='item-no-requests dash-card-text border-top border-top pt-5'>No requests for this item.</p>
             {{/if}}
           </div>
         {{/each}}
@@ -114,37 +87,28 @@
     {{/if}}
   </section>
 
-  <section>
-    <h2>Items You Borrowed:</h2>
+ <section>
+    <h2 class="borrowed-items">Items You Borrowed:</h2>
     {{#if borrowedItems.length}}
-      <div class='grid grid-flow-row my-8 gap-8 text-neutral-600 sm:grid-cols-1 md:grid-cols-2'>
+      <div class='grid grid-flow-row my-8 gap-8 sm:grid-cols-1 md:grid-cols-2'>
         {{#each borrowedItems}}
         <div class='rounded-xl p-6 shadow-lg shadow-gray-200 bg-white duration-300 hover:-translate-y-1 feed-card card' id='render-add-review'>
-          <h3 class='mt-0'>{{this.item_name}}</h3>
-          <p>{{this.item_description}}</p>
+          <h3 class='item-name text-center mt-0'><strong>{{this.item_name}}</strong></h3>
+          <p class="item-description text-center">{{this.item_description}}</p>
           <p class='dash-card-text borrowed-from border-top'>
-            <span>Borrowed from {{this.owner.firstName}}</span>
-          {{#ifEqual this.return.return_status 'pending'}}
-            <button class='return-button btn btn-outline btn-xs display-inline' data-item-id={{this.id}} disabled>
-              Return Initiated
-            </button>
+            Borrowed from {{this.owner.firstName}}
           </p>
-          {{else}}
-            <button class='return-button btn btn-outline btn-xs display-inline' data-item-id={{this.id}}>
-              Initiate Return
-            </button>
-          </p>
-          <div class="review-wrapper" id="review-wrapper-{{this.id}}"></div>
-          {{/ifEqual}}
+           <button class='return-button btn' data-item-id={{this.id}}>
+            Initiate Return 
+            </button>    
+            <div class="review-wrapper" id="review-wrapper-{{this.id}}"></div>
         </div>
         {{/each}}
       </div>
     {{else}}
-      <p class='none emptyBox p-5 rounded-xl'>No borrowed items.</p>
+      <p class='none emptyBox p-5 rounded-xl'>You haven't borrowed any items yet.</p>
     {{/if}}
   </section>
-
-   
 
 </main>
 

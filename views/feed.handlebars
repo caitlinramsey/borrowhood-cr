@@ -25,8 +25,8 @@
                         not-available
                     {{/if}}
                 '></span>
-                <span class='stars'>{{#if this.averageRating}}{{renderStars this.averageRating}}{{else}}<h4 class='not-rated'>Not Rated</h4>{{/if}}</span>
-                <h2 class='card-title mb-3'>{{this.item_name}}</h2>
+                <span class='stars text-lg'>{{#if this.averageRating}}{{renderStars this.averageRating}}{{else}}<h5 class='not-rated'>Not Rated</h5>{{/if}}</span>
+                <h2 class='card-title mb-3'><strong>{{this.item_name}}</strong></h2>
                 <p class='card-description mb-3'>{{{trimString this.item_description}}} ...</p>
                 <p class='card-condition mb-3'><strong>Condition:</strong> {{this.item_condition}}</p>
                 <p class='card-owner mb-3'><strong>Owner:</strong> {{this.owner.firstName}}</p>
@@ -75,14 +75,14 @@
                 <div class='modal-action'>
                     {{#isCurrentUserItem this.user_id ../userId this.is_available}}
                         {{#if this.requests.length}}
-                            <button type='button' class='btn borrow-button' disabled>Pending</button>
+                            <button type='button' class='borrow-button' disabled>Pending</button>
                         {{else}}
-                            <button type='button' class='btn borrow-button' data-user-id='{{../userId}}' data-item-id='{{this.id}}'>Borrow</button>
+                            <button type='button' class='borrow-button' data-user-id='{{../userId}}' data-item-id='{{this.id}}'>Borrow</button>
                         {{/if}}
                         {{else if this.is_available}}
-                            <button type='button' class='btn borrow-button' disabled>You own it</button>
+                            <button type='button' class='borrow-button' disabled>You own it</button>
                         {{else}}
-                            <button type='button' class='btn borrow-button' disabled>Borrowed</button>
+                            <button type='button' class='borrow-button' disabled>Borrowed</button>
                     {{/isCurrentUserItem}}
                 </div>
             </form>
