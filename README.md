@@ -56,7 +56,7 @@ Framework: [Tailwind CSS - Daisy UI](https://daisyui.com/docs/install/)
 ## Deployed Application
 Original Application: https://polar-beach-65067-18b2f94f915d.herokuapp.com/
 </br>
-Updated Application: 
+Updated Application: https://borrowhood-cr-f9cdabd8dd11.herokuapp.com/
 
 ## Contact
 - [GitHub](https://github.com/caitlinramsey) | [LinkedIn](https://www.linkedin.com/in/caitlin-ramsey/) | [Email](caitlinramsey@outlook.com)
