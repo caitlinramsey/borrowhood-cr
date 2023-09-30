@@ -10,7 +10,8 @@
   --pending: #ffb300;
   --input-background: white;
   --profile-titles: rgb(58, 51, 51);
-  --login-text: rgb(77, 73, 73);
+  --login-text: rgb(209, 202, 202);
+  --login-card: rgb(55, 49, 49);
 }
 
 * {
@@ -55,11 +56,13 @@ body {
 
 /* Homepage Styling */
 
-/* .h-screen {
+.h-screen {
   background-image: url(../images/neighborhood.jpg);
+  background-size: 3000px;
   min-width: 100vw;
+  min-height: 100vh;
   background-repeat: no-repeat;
-} */
+}
 
 /* Chat Styling */
 
@@ -170,6 +173,14 @@ body {
 
 /* Log In Page */
 
+.login-card {
+  background-color: var(--login-card);
+}
+
+.login-title {
+  color: var(--input-background);
+}
+
 .label-text {
   color: var(--login-text);
 }
@@ -178,10 +189,26 @@ body {
   color: var(--primary);
 }
 
+.account {
+  color: var(--input-background);
+}
+
 /* Register Page */
+
+.register-card {
+  background-color: var(--login-card);
+}
+
+.register-title {
+  color: var(--input-background);
+}
 
 .register-button {
   color: var(--primary);
+}
+
+.login-register {
+  color: var(--input-background);
 }
 
 /* Request container */
@@ -596,9 +623,10 @@ margin-top: 1.5rem;
 
 .about-desc {
   color: var(--text);
-  position: relative;
   font-size: 1.5rem;
-  margin: 3rem;
+  margin: 4rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 
 .divider {
@@ -622,6 +650,10 @@ margin-top: 1.5rem;
   position: relative;
   font-size: 1.5rem;
   margin: 3rem;
+}
+
+.contact-details i:hover {
+  transform: scale(1.5);
 }
 
 /* Profile Styling */
@@ -671,5 +703,5 @@ margin-top: 1.5rem;
 .copyright {
   font-size: 1.4rem;
   color: var(--text);
-  bottom: 0;
+  padding: 2rem;
 }
