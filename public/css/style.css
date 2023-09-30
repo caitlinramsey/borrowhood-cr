@@ -118,6 +118,26 @@ body {
   padding: .5rem;
 }
 
+.about-us-nav {
+  font-size: 1.3rem;
+  padding-left: 2rem;
+  margin-top: -1rem;
+}
+
+.about-us-nav:hover {
+  text-decoration: none;
+  transform: scale(1.2);
+}
+
+.github {
+  padding-left: 2rem;
+  margin-top: -1rem;
+}
+
+.github:hover {
+  transform: scale(1.2);
+}
+
 .logo {
   height: 4.5rem;
   width: auto;
@@ -126,11 +146,6 @@ body {
 .welcome {
   font-size: 20px;
   color: var(--text);
-}
-
-.bg-orange-400 {
-  tw-bg-opacity: 1;
-  background-color: rgb(251 146 60 / var(--tw-bg-opacity));
 }
 
 .logout-icon {
@@ -653,27 +668,8 @@ margin-top: 1.5rem;
 
 /* Footer Styling */
 
-footer {
-  background-color: var(--secondary);
-  height: 250px;
-  position: absolute;
-  bottom: 0;
-}
-
-.about-us-footer {
-  font-size: 2rem;
-}
-
-.about-us-footer:hover {
-  text-decoration: none;
-  transform: scale(1.2);
-}
-
-.github:hover {
-  transform: scale(1.2);
-}
-
 .copyright {
   font-size: 1.4rem;
   color: var(--text);
+  bottom: 0;
 }
