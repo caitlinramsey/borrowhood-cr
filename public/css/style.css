@@ -181,6 +181,7 @@ body {
 
 .login-title {
   color: var(--input-background);
+  padding-bottom: 1rem;
 }
 
 .label-text {
@@ -766,6 +767,65 @@ margin-top: 1.5rem;
   .navbar-end {
     margin: auto;
     justify-content: center;
+  }
+
+  .login-card {
+    width: 60vw;
+  }
+
+  .register-card {
+    width: 60vw;
+  }
+
+  .welcome-text {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+
+  .your-items {
+    font-size: 1.5rem;
+  }
+
+  .borrowed-items {
+    font-size: 1.5rem;
+  }
+
+  .about-desc {
+    width: 90vw;
+    margin: auto;
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .login-card {
+    width: 80vw;
+  }
+
+  .register-card {
+    width: 80vw;
+  }
+
+  .profile-header {
+    font-size: 3rem;
+  }
+
+  .current-info {
+    font-size: 1.5rem;
+  }
+
+  .edit-profile {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .reset-password-text {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-desc {
+    width: 100vw;
   }
 }
 
