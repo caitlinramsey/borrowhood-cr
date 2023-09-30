@@ -22,6 +22,7 @@
 body {
   background-color: var(--primary);
   min-height: 100vh;
+  min-height: 100svh;
   color:var(--text);
 }
 
@@ -642,15 +643,34 @@ margin-top: 1.5rem;
   border-radius: .5rem;
 }
 
+.save-changes:hover {
+  transform: scale(1.2);
+}
+
+.reset-password:hover {
+  transform: scale(1.2);
+}
+
 /* Footer Styling */
 
 footer {
   background-color: var(--secondary);
   height: 250px;
+  position: absolute;
+  bottom: 0;
 }
 
 .about-us-footer {
   font-size: 2rem;
+}
+
+.about-us-footer:hover {
+  text-decoration: none;
+  transform: scale(1.2);
+}
+
+.github:hover {
+  transform: scale(1.2);
 }
 
 .copyright {
